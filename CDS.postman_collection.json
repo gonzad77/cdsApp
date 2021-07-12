@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "cc9e79cc-eaf8-465e-982f-14a1938b7b99",
+		"name": "CDS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pepe@gmail.com\",\r\n    \"password\": \"pepe123\",\r\n    \"firstName\": \"pepe\",\r\n    \"lastName\": \"argento\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pepe@gmail.com\",\r\n    \"password\": \"pepe123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movies by keyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGVjOTY2YWMwOWFiYjJjYzg5MGJmMjMiLCJpYXQiOjE2MjYxMTk4NTEsImV4cCI6MTYyNjEyMzQ1MX0.PLKlcP4x2s3JYziD6O8mEddyGLEiOOt-GoNzL-62kO8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie?keyword=\"Dead\"&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "\"Dead\""
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add favourite movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGVjOTY2YWMwOWFiYjJjYzg5MGJmMjMiLCJpYXQiOjE2MjYxMTc3NDIsImV4cCI6MTYyNjEyMTM0Mn0.KBdzlpCHhGScwPKMOR9G3fxZ_mDvSSuVXgQIdVnhfOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 727,\r\n    \"title\": \"Dead Finding\",\r\n    \"release_date\": \"1987-03-13\",\r\n    \"overview\": \"Ash Williams and his girlfriend Linda find a log cabin in the woods with a voice recording from an archeologist who had recorded himself reciting ancient chants from \\\"The Book of the Dead.\\\" As they play the recording an evil power is unleashed taking over Linda's body.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movie/favourites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get favourites movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGVjOTY2YWMwOWFiYjJjYzg5MGJmMjMiLCJpYXQiOjE2MjYxMTc3NDIsImV4cCI6MTYyNjEyMTM0Mn0.KBdzlpCHhGScwPKMOR9G3fxZ_mDvSSuVXgQIdVnhfOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/favourites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
