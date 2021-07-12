@@ -18,7 +18,7 @@ To manage mognoDB this project use mongoose.
 
 ## Endpoints
 
-Create user
+#### Create user
 
 POST: 'http://localhost:8080/user'
 
@@ -30,7 +30,7 @@ Body: {
     }
 
 
-Login user and return token. Token will expire in 1h.
+#### Login user and return token. Token will expire in 1h.
 
 POST: 'http://localhost:8080/auth/login'
 
@@ -40,14 +40,14 @@ Body: {
     }
 
 
-Get movies (params are not required). In case you don't send params, the api will return first page of most popular movies.
+#### Get movies (params are not required). In case you don't send params, the api will return first page of most popular movies.
 
 GET: http://localhost:8080/movie?keyword="someKeyword"&page=somePage
 
 Authorization: Bearer [token]
 
 
-Add movie to favourites
+#### Add movie to favourites
 
 POST: http://localhost:8080/movie/favourites
 
@@ -61,7 +61,7 @@ Body {
 }
 
 
-Get favourites movies
+#### Get favourites movies
 
 GET: http://localhost:8080/movie/favourites
 
